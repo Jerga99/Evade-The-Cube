@@ -4,27 +4,53 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private float m_AccuTime = 0;
-    private float m_Fps = 0;
+    // Recap
+    // Awake - One approach is to init an objects own references and variables
+    // Start - use or create rederences to other objects and their components
+
+
+    // is called only once
+    // is called when script is disabled
+    // is called before the start
+    // is called when other objects are initialized
+    void Awake()
+    {
+        Debug.Log("Calling Awake");
+    }
 
     // Start is called before the first frame update
+    // is called when script is enabled
+    // can be used as coroutine (execution of start can be delayed)
     void Start()
     {
-        
+        Debug.Log("Calling Start");
     }
 
-    // Update is called once per frame
-    void Update()
+    // is Called when script is enabled
+    void OnEnable()
     {
-        m_AccuTime += Time.deltaTime;
-        m_Fps++;
-
-        if (m_AccuTime >= 1)
-        {
-            Debug.Log("BUM " + m_AccuTime);
-            Debug.Log("FPS " + m_Fps);
-            m_Fps = 0;
-            m_AccuTime = 0;
-        }
+        Debug.Log("Calling OnEnable");
     }
+
+    void OnDisable()
+    {
+        Debug.Log("Calling OnDisable");
+    }
+
+    //// Update is called once per frame
+    //void FixedUpdate()
+    //{
+    //    Debug.Log("Calling Fixed Update");
+    //}
+
+    //// Update is called once per frame
+    //void Update()
+    //{
+    //    Debug.Log("Calling Update");
+    //}
+
+    //void LateUpdate()
+    //{
+    //    Debug.Log("Calling Late Update");
+    //}
 }
