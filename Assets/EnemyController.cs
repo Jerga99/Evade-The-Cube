@@ -7,13 +7,8 @@ public class EnemyController : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        Stats stats = GetComponent<Stats>();
-        Debug.Log(stats.health);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        GameObject playerGo = GameObject.Find("Player");
+        Stats playerStats = playerGo.GetComponent<Stats>();
+        Debug.Log("Player health: " + playerStats.health);
     }
 }
