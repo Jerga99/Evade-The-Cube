@@ -9,11 +9,22 @@ public class EnemyController : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        Debug.Log(stats.health);
-        //Stats playerStats = GameObject
-        //    .Find("Player")
-        //    .GetComponent<Stats>();
+        stats = GetComponent<Stats>();
 
-        //Debug.Log("Player health: " + playerStats.health);
+        //GameObject enemyGo = GameObject.Find("Player");
+        //PlayerController pc = enemyGo.GetComponent<PlayerController>();
+        //Debug.Log(pc.stats);
+
+        //// we are getting error here becauase gameobect's
+        //// component hasn't has made a reference to it's own component
+        //// player controller doesn't have reference to stats component yet
+        //Debug.Log(pc.stats.health);
+    }
+
+    private void Start()
+    {
+        GameObject enemyGo = GameObject.Find("Player");
+        PlayerController pc = enemyGo.GetComponent<PlayerController>();
+        Debug.Log(pc.stats.health);
     }
 }

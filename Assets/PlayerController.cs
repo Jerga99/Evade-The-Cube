@@ -8,11 +8,14 @@ public class PlayerController : MonoBehaviour
 
     void Awake()
     {
-        Debug.Log(stats.health);
-        //Stats enemyStats = GameObject
-        //    .Find("Enemy")
-        //    .GetComponent<Stats>();
+        stats = GetComponent<Stats>();
+    }
 
-        //Debug.Log("Enemy Health " + enemyStats.health);
+    private void Start()
+    {
+        GameObject enemyGo = GameObject.Find("Enemy");
+        EnemyController ec = enemyGo.GetComponent<EnemyController>();
+
+        Debug.Log(ec.stats.health);
     }
 }

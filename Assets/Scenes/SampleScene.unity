@@ -234,7 +234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd8339729edcb479aac6d786628e6941, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {fileID: 815822622}
+  stats: {fileID: 0}
 --- !u!114 &815822622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,7 +247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f22f1235367442f690fd4789e47dce4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
+  health: 200
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -453,7 +453,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb9d673d55ed3489fa5f2c38c062da18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {fileID: 1025532610}
+  stats: {fileID: 0}
 --- !u!1 &1146766498
 GameObject:
   m_ObjectHideFlags: 0
