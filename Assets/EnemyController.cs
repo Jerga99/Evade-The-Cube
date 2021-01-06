@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
+    public Stats stats;
+
     // Start is called before the first frame update
     void Awake()
     {
-        GameObject playerGo = GameObject.Find("Player");
-        Stats playerStats = playerGo.GetComponent<Stats>();
-        Debug.Log("Player health: " + playerStats.health);
+        Debug.Log(stats.health);
+        //Stats playerStats = GameObject
+        //    .Find("Player")
+        //    .GetComponent<Stats>();
+
+        //Debug.Log("Player health: " + playerStats.health);
     }
 }
