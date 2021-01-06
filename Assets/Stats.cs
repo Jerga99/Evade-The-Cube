@@ -2,9 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class Stats : MonoBehaviour
 {
-    void Update()
-    {
-    }
+    public float health;
 }
