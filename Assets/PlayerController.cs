@@ -4,18 +4,14 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public Stats stats;
 
-    void Awake()
+
+    private void Update()
     {
-        stats = GetComponent<Stats>();
-    }
+        float horizontalInput = Input.GetAxis("Horizontal");
+        float verticalInput = Input.GetAxis("Vertical");
 
-    private void Start()
-    {
-        GameObject enemyGo = GameObject.Find("Enemy");
-        EnemyController ec = enemyGo.GetComponent<EnemyController>();
-
-        Debug.Log(ec.stats.health);
+        Debug.Log("H-> " + horizontalInput);
+        Debug.Log("V-> " + verticalInput);
     }
 }
