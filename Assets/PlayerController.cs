@@ -11,7 +11,9 @@ public class PlayerController : MonoBehaviour
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
 
-        Debug.Log("H-> " + horizontalInput);
-        Debug.Log("V-> " + verticalInput);
+        transform.position = new Vector3(
+            transform.position.x + horizontalInput,
+            1,
+            transform.position.z + verticalInput);
     }
 }
