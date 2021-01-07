@@ -13,23 +13,23 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         float horizontalInput = Input.GetAxis("Horizontal");
+        float horizontalPosition = transform.position.x + horizontalInput * speed * Time.deltaTime;
 
-        Debug.Log("PLayer Z position: " + transform.position.x);
-        Debug.Log("Left Wall Z position: " + leftWall.position.x);
+        float playerSize = transform.localScale.x / 2;
 
-        if (transform.position.x <= leftWall.position.x)
+        if (horizontalPosition - playerSize <= leftWall.position.x + leftWall.localScale.x / 2)
         {
             return;
         }
 
-        if (transform.position.x >= rightWall.position.x)
+        if (horizontalPosition + playerSize >= rightWall.position.x - rightWall.localScale.x / 2)
         {
             return;
         }
 
 
         transform.position = new Vector3(
-            transform.position.x + horizontalInput * speed * Time.deltaTime,
+            horizontalPosition,
             1,
             transform.position.z);
     }
