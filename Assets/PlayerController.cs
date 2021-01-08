@@ -5,9 +5,15 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float speed;
-
     public Transform leftWall;
     public Transform rightWall;
+
+    private Stats m_Stats;
+
+    private void Awake()
+    {
+        m_Stats = GetComponent<Stats>();
+    }
 
     // if fps is 150 then update is called 150 and position is changes by 150
     private void Update()
@@ -36,6 +42,6 @@ public class PlayerController : MonoBehaviour
 
     public void ReceiveDamage()
     {
-        Debug.Log("AU!");
+        m_Stats.UpdateHealth(10);
     }
 }
