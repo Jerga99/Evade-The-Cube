@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
+    private float m_TresholdPositionZ = -20.0f;
     public float speed;
 
     private void Update()
@@ -12,5 +13,10 @@ public class EnemyController : MonoBehaviour
             transform.position.x,
             transform.position.y,
             transform.position.z - speed * Time.deltaTime);
+
+        if (transform.position.z <= m_TresholdPositionZ)
+        {
+            Destroy(gameObject);
+        }
     }
 }
