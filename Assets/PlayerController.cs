@@ -33,4 +33,9 @@ public class PlayerController : MonoBehaviour
             1,
             transform.position.z);
     }
+
+    public void ReceiveDamage()
+    {
+        Debug.Log("AU!");
+    }
 }
