@@ -12,33 +12,39 @@ public class SpawnManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating(nameof(SpawnEnemy), 0, 2.0f);
+        InvokeRepeating(nameof(SpawnEvader), 0, 2.0f);
         InvokeRepeating(nameof(SpawnCatcher), 1.0f, 2.0f);
     }
 
     private void SpawnCatcher()
     {
-        Vector3 spawnPosition = new Vector3(
-            Random.Range(spawnRangeX[0], spawnRangeX[1]),
-            catcherPrefab.transform.position.y,
-            catcherPrefab.transform.position.z);
-
-        Instantiate(
-            catcherPrefab,
-            spawnPosition,
-            catcherPrefab.transform.rotation);
+        SpawnEnemy(EnemyType.Catcher);
     }
 
-    private void SpawnEnemy()
+    private void SpawnEvader()
+    {
+        SpawnEnemy(EnemyType.Evader);
+    }
+
+    private void SpawnEnemy(EnemyType enemyType)
     {
         Vector3 spawnPosition = new Vector3(
             Random.Range(spawnRangeX[0], spawnRangeX[1]),
             enemyPrefab.transform.position.y,
             enemyPrefab.transform.position.z);
 
-        Instantiate(
-            enemyPrefab,
-            spawnPosition,
-            enemyPrefab.transform.rotation);
+        if (enemyType == EnemyType.Evader)
+        {
+            Instantiate(
+                enemyPrefab,
+                spawnPosition,
+                enemyPrefab.transform.rotation);
+        } else
+        {
+            Instantiate(
+                catcherPrefab,
+                spawnPosition,
+                catcherPrefab.transform.rotation);
+        }
     }
 }
