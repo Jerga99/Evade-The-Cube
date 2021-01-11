@@ -34,10 +34,20 @@ public class EnemyController : MonoBehaviour
         // measure distance between the enemy and player position
 
         if (Vector3.Distance(m_Pc.transform.position, transform.position) < 1.0f) {
-            m_Pc.ReceiveDamage();
+            if (enemyType == EnemyType.Evader)
+            {
+                m_Pc.ReceiveDamage();
+            }
+
             Destroy(gameObject);
 
-        } else if (transform.position.z <= m_TresholdPositionZ)
+        } else if (m_Pc.transform.position.z - transform.position.z > 5.0f && enemyType == EnemyType.Catcher)
+        {
+            m_Pc.ReceiveDamage();
+            Destroy(gameObject);
+        }
+
+        else if (transform.position.z <= m_TresholdPositionZ)
         {
             Destroy(gameObject);
         }
