@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -20,6 +21,11 @@ public class PlayerController : MonoBehaviour
     // if fps is 150 then update is called 150 and position is changes by 150
     private void Update()
     {
+        if (m_Stats.health <= 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+
         float horizontalInput = Input.GetAxis("Horizontal");
         float horizontalPosition = transform.position.x + horizontalInput * speed * Time.deltaTime;
 
