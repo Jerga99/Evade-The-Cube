@@ -362,6 +362,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 7482797998397191562, guid: 6ff84f77e67004296858c68bd3bb9c05, type: 3}
+  catcherPrefab: {fileID: 5777395840192938229, guid: 6478392895b8d4e389c9b463ba8860d5, type: 3}
   spawnRangeX: {x: -7.75, y: 7.75}
 --- !u!4 &677224225
 Transform:
@@ -570,7 +571,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f22f1235367442f690fd4789e47dce4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 200
+  health: 50
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
